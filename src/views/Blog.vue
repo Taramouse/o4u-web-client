@@ -1,11 +1,11 @@
 <template>
-  <div class="blog">
-    <h1 class="text-center display-1">Optimized4U Blog</h1>
+  <div class="blog container-fluid">
+    <h1 class="text-center display-4 mb-4">Optimized4U Blog</h1>
     <b-card-group group
                   columns
                   id="posts">
       <!-- TODO: use post.image for img-src -->
-      <b-card img-src="https://placekitten.com/g/300/450"
+      <b-card img-src="https://picsum.photos/300/300/?image=41"
               img-alt="Image"
               img-top
               tag="article"
@@ -22,21 +22,6 @@
         </template>
       </b-card>
     </b-card-group>
-
-    <!-- <b-list-group>
-        <b-list-group-item href="#"
-                           default
-                           class="flex-column align-items-start mb-1"
-                           v-for="post in posts"
-                           :key="post.id">
-          <div class="w-100 justify-content-start">
-            <h5 class="mb-1">{{ post.title }}</h5>
-            <p>{{ post.intro }}</p>
-            <small>{{ post.created_at }}</small>
-          </div>
-        </b-list-group-item>
-      </b-list-group> -->
-
   </div>
 </template>
 
@@ -64,3 +49,5 @@ export default {
   }
 }
 </script>
+<style>
+</style>
