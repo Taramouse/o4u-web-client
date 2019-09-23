@@ -11,16 +11,15 @@
 
         <b-collapse id="nav-text-collapse"
                     is-nav>
-          <b-navbar-nav>
+          <b-navbar-nav class="ml-auto pr-4">
             <b-nav-item to="/">Home</b-nav-item>
             <b-nav-item to="/blog">Blog</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
     </div>
-    F
-    <div class="container"
-         id="app">
+
+    <div class="container">
       <router-view />
     </div>
 
@@ -29,6 +28,6 @@
 
 <style>
 #app {
-  margin-top: 30px;
+  margin-top: 56px;
 }
 </style>

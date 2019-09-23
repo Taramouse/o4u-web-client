@@ -5,20 +5,21 @@
                   columns
                   id="posts">
       <!-- TODO: use post.image for img-src -->
-      <b-card img-src="https://picsum.photos/300/300/?image=41"
+      <b-card :img-src="post.thumb_thumbnail_url"
               img-alt="Image"
               img-top
               tag="article"
               style="max-width: 20rem;"
-              class="mb-2"
+              class="mb-2 text-center"
               v-for="post in posts"
               :key="post.id"
               :title="post.title">
-        <b-card-text>
-          {{post.intro}}
+        <b-card-text class="text-left"
+                     v-html="post.content">
+          <!-- TODO: Use the html formatting -->
         </b-card-text>
         <template v-slot:footer>
-          <small class="text-muted">{{ post.updated_at }}</small>
+          <small class="text-muted">{{ post.posted_at }}</small>
         </template>
       </b-card>
     </b-card-group>
@@ -32,7 +33,8 @@ export default {
   data () {
     return {
       posts: [],
-      baseUrl: 'http://192.168.0.11:8000/api/posts'
+      baseUrl: 'http://192.168.0.11:8000/api/posts',
+      baseLaravelBlogUrl: 'http://192.168.0.11:8000/api/v1/posts?api_token=atJLEyd7KJQ1BFuBI5vUieLXE2AVW4pN9kFca8Nz'
     }
   },
   created () {
@@ -40,7 +42,7 @@ export default {
   },
   methods: {
     getPosts () {
-      axios.get(this.baseUrl).then((response) => {
+      axios.get(this.baseLaravelBlogUrl).then((response) => {
         this.posts = response.data.data
       }).catch((error) => {
         console.log(error)
