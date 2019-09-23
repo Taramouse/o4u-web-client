@@ -16,7 +16,6 @@
               :title="post.title">
         <b-card-text class="text-left"
                      v-html="post.content">
-          <!-- TODO: Use the html formatting -->
         </b-card-text>
         <template v-slot:footer>
           <small class="text-muted">{{ post.posted_at }}</small>
@@ -34,20 +33,16 @@ export default {
     return {
       posts: [],
       baseUrl: 'http://192.168.0.11:8000/api/posts',
-      baseLaravelBlogUrl: 'http://192.168.0.11:8000/api/v1/posts?api_token=atJLEyd7KJQ1BFuBI5vUieLXE2AVW4pN9kFca8Nz'
+      baseLaravelBlogUrl: 'http://192.168.0.11:8000/api/v1/posts',
+      apiToken: '?api_token=atJLEyd7KJQ1BFuBI5vUieLXE2AVW4pN9kFca8Nz'
     }
   },
   created () {
-    this.getPosts()
-  },
-  methods: {
-    getPosts () {
-      axios.get(this.baseLaravelBlogUrl).then((response) => {
-        this.posts = response.data.data
-      }).catch((error) => {
-        console.log(error)
-      })
-    }
+    axios.get(this.baseLaravelBlogUrl).then((response) => {
+      this.posts = response.data.data
+    }).catch((error) => {
+      console.log(error)
+    })
   }
 }
 </script>
