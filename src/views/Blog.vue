@@ -32,13 +32,13 @@ export default {
   data () {
     return {
       posts: [],
-      baseUrl: 'http://192.168.0.11:8000/api/posts',
-      baseLaravelBlogUrl: 'http://192.168.0.11:8000/api/v1/posts',
+      baseUrl: 'http://optimized4u.ddns.net:8000/api/posts',
+      baseLocalBlogUrl: 'http://192.168.0.11:8000/api/v1/posts',
       apiToken: '?api_token=atJLEyd7KJQ1BFuBI5vUieLXE2AVW4pN9kFca8Nz'
     }
   },
   created () {
-    axios.get(this.baseLaravelBlogUrl).then((response) => {
+    axios.get(this.baseUrl).then((response) => {
       this.posts = response.data.data
     }).catch((error) => {
       console.log(error)
