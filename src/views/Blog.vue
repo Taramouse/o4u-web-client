@@ -32,7 +32,7 @@ export default {
   data () {
     return {
       posts: [],
-      baseUrl: 'http://optimized4u.ddns.net:8000/api/posts',
+      baseUrl: 'http://optimized4u.ddns.net:8000/api/v1/posts',
       baseLocalBlogUrl: 'http://192.168.0.11:8000/api/v1/posts',
       apiToken: '?api_token=atJLEyd7KJQ1BFuBI5vUieLXE2AVW4pN9kFca8Nz'
     }
