@@ -16,7 +16,7 @@
     "bootstrap-vue": "^2.0.4",
     "core-js": "^2.6.5",
     "font-awesome": "^4.7.0",
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
@@ -28,6 +28,6 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.11"
   }
 }
